@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Webcam from "react-webcam";
 
 import captureTxt from "./../../assets/camera/capture-txt.png";
-import downloadTxt from "./../../assets/camera/download-txt.png";
+import likeThis from "./../../assets/camera/like-this.png";
 import captureBtn from "./../../assets/camera/capture-btn.png";
 import retakeBtn from "./../../assets/camera/retake-btn.png";
 import submitBtn from "./../../assets/camera/submit-btn.png";
@@ -55,8 +55,12 @@ export default function CameraPage({ setCapturedImg }) {
   return (
     <div className={`flex-col-center ${styles.CameraPage}`}>
       <header className={`flex-row-center ${styles.header}`}>
-        <div className={`flex-row-center ${styles.headingImgContainer}`}>
-          <img src={isCaptured ? downloadTxt : captureTxt} />
+        <div
+          className={`flex-row-center ${
+            isCaptured ? styles.likeThisImg : styles.captureTxtImg
+          }`}
+        >
+          <img src={isCaptured ? likeThis : captureTxt} />
         </div>
       </header>
 

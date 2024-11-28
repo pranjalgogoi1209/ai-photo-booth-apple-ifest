@@ -77,7 +77,7 @@ export default function Email({ setShowEmail, url }) {
     try {
       axios
         .post(
-          "https://analytiq4.com/aiphotobooth/aiphotobooth_bluehat/emailer/index.php",
+          "https://techkilla.in/aiphotobooth/aiphotobooth_ifest/emailer/index.php",
           {
             url: url,
             email: userEmail,
@@ -95,7 +95,7 @@ export default function Email({ setShowEmail, url }) {
     }
   };
 
-  const onKeyPress = button => {
+  const onKeyPress = (button) => {
     console.log("Button pressed", button);
 
     /**
@@ -112,7 +112,7 @@ export default function Email({ setShowEmail, url }) {
       : setKeyboardLayout("default");
   };
 
-  const onChangeInput = event => {
+  const onChangeInput = (event) => {
     const input = event.target.value;
 
     setUserEmail(input);
@@ -122,7 +122,7 @@ export default function Email({ setShowEmail, url }) {
     <div className={styles.Email} onClick={() => setShowEmail(false)}>
       <div
         className={styles.container}
-        onClick={e => {
+        onClick={(e) => {
           e.stopPropagation();
         }}
       >
@@ -130,7 +130,7 @@ export default function Email({ setShowEmail, url }) {
           type="mail"
           value={userEmail}
           placeholder="Enter your email"
-          onChange={e => setUserEmail(e.target.value)}
+          onChange={(e) => setUserEmail(e.target.value)}
           className={styles.input}
         />
         {/*   <Keyboard

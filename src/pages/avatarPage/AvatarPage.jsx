@@ -71,12 +71,9 @@ export default function AvatarPage({
   // image uploading on server
   const getUrl = (url) => {
     axios
-      .post(
-        "https://analytiq4.com/aiphotobooth/aiphotobooth_bluehat/upload.php",
-        {
-          img: url,
-        }
-      )
+      .post("https://techkilla.in/aiphotobooth/aiphotobooth_ifest/upload.php", {
+        img: url,
+      })
       .then(function (response) {
         setUrl(response.data.url);
         // console.log("image uploaded on server");

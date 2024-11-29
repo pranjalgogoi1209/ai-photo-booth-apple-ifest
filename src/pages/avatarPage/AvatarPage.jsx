@@ -14,6 +14,8 @@ import chooseTxt from "./../../assets/avatar/choose-txt.png";
 import selectIcon from "./../../assets/avatar/select.svg";
 import selectBtn from "./../../assets/avatar/select-btn.png";
 
+import { uploadImage } from "../../utils/uploadFirebase";
+
 export default function AvatarPage({
   setGeneratedImg,
   capturedImg,
@@ -69,18 +71,25 @@ export default function AvatarPage({
   };
 
   // image uploading on server
-  const getUrl = (url) => {
-    axios
-      .post("https://techkilla.in/aiphotobooth/aiphotobooth_ifest/upload.php", {
-        img: url,
-      })
-      .then(function (response) {
-        setUrl(response.data.url);
-        // console.log("image uploaded on server");
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+  const getUrl =async (url) => {
+    // axios
+    //   .post("https://techkilla.in/aiphotobooth/aiphotobooth_ifest/upload.php", {
+    //     img: url,
+    //   })
+    //   .then(function (response) {
+    //     setUrl(response.data.url);
+    //     // console.log("image uploaded on server");
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
+
+    // firebase
+    let output = await uploadImage(url) 
+    console.log(output);
+    setUrl(output);
+    return output;
+
   };
 
   // submitting the selected image and post request to api
@@ -106,6 +115,7 @@ export default function AvatarPage({
 
               // image uploading on server
               getUrl(response.data.result);
+              
             })
             .catch(function (error) {
               console.log(error);

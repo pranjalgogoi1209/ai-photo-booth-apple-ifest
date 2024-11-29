@@ -23,7 +23,7 @@ export default function App() {
 
       <Routes>
         {/* home-page */}
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage setUrl={setUrl} />} />
 
         {/* gender-page */}
         {/*<Route path="/gender" element={<GenderPage setGender={setGender} />} /> */}

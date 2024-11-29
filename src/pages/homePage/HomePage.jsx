@@ -7,7 +7,8 @@ import { cardsArr } from "../../utils/avatar/cards";
 
 import startBtn from "./../../assets/home/start-btn.png";
 
-export default function HomePage() {
+export default function HomePage({ setUrl }) {
+  setUrl("");
   return (
     <div className={`flex-col-center ${styles.HomePage}`}>
       <div className={`flex-col-center ${styles.avatarContainer}`}>

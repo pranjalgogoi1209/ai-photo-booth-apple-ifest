@@ -25,7 +25,7 @@ function getUID() {
         createdAt: Date.now(),
       }
     );
-    console.log(downloadURL);
+    // console.log(downloadURL);
     
     return downloadURL;
     
